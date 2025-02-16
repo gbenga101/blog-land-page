@@ -2,14 +2,14 @@
     box-sizing: border-box;
 }
 body{
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
 }
 
 header{
     padding: 0 80px 30px;
-    height: 350px;
+    height: 400px;
     background-color: rgb(240, 78, 78);
     background-image: url(../images/bg-pattern-intro-desktop.svg);
     background-repeat: no-repeat;
@@ -135,7 +135,13 @@ a{
     color: rgb(240, 78, 78);
     border: 1px solid white;   
 }
-
+/*Moving to 1st section on main tag*/
+main{
+    padding: 50px 0;
+}
+main > first-section > h3{
+    font-family: poppins;
+}
 
 
 .images *{
