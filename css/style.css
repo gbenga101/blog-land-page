@@ -176,12 +176,9 @@ main > .first-section{
     grid-row-end: 3;
     grid-column-start: -2;
     grid-column-end: -1;
-}
-.content-3 img{
-    height: 500px;
-    width: 100%;
-    position: relative;
-    left: 25%;
+    /* width: 100%; */
+    background-image: url(../images/illustration-editor-desktop.svg);
+    background-size: cover;
 }
 
 
