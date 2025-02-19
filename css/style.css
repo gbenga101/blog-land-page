@@ -171,9 +171,13 @@ main > .first-section{
     grid-column: span 2;
 }
 .first-section .content-2{
+    margin-top: 50px;
     order: 2;
     /*grid-area: 3, 1, 4, 3;*/
     grid-column: span 2;
+}
+.item1{
+    height: 200px;
 }
 .first-section .content-3{
     order: 1;
