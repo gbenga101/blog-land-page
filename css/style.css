@@ -334,7 +334,7 @@ footer a:hover, .attribution a:hover{
 
 
 /*Moving to Small screen & Laptops media query*/
- @media (max-width: 1024px) and (min-width: 769px){
+ @media (max-width: 1000px) and (min-width: 765px){
     body{
         width: 100%;
     }
@@ -379,5 +379,33 @@ footer a:hover, .attribution a:hover{
     }
 
     /* Third section about to start */
+    .third-section{
+        margin: 100px 20px 0 0;
+    }
+    .third-section .t-content1{
+        height: 500px;
+    }
+    .t-content1 > img{
+        right: 18%;
+    }
     
+    .t-content2 p, .t-content3 p{
+        line-height: 2.1ch;
+    }
+    .t-items{
+        height: 200px;
+    }
+
+    /* Moving to the Footer section */
+    footer{
+        margin-top: 20px;
+        padding: 30px 100px 0 50px;
+        height: 250px;
+    }
+    footer a{
+        font-size: 16px;
+    }
+    .product, .company, .connect{
+        gap: 7px;
+    }
 }
