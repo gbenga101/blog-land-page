@@ -364,5 +364,20 @@ footer a:hover, .attribution a:hover{
     }
     
     /* Moving to the Second section */
+    .sec-section{
+        height: 250px;
+        margin: 100px 0 20px;
+        padding-right: 45px;
+        column-gap: 0px;
+    }
+    .sec-section img{
+        height: auto;
+        width: 90%;
+        position: relative;
+        left: 20px;
+        top: -100px;
+    }
+
+    /* Third section about to start */
     
 }
