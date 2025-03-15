@@ -38,6 +38,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
 }
 
 .logo-nav{
@@ -132,6 +133,8 @@ a{
     color: aliceblue;
     font-family:Arial, Helvetica, sans-serif;
     text-align: center;
+    position: relative;
+    top: 70px;
 }
 .hero p{
     margin: 25px 0;
