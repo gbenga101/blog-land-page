@@ -61,6 +61,7 @@ nav ul > li{
     padding: 5px 15px;
     position: relative;
 }
+
 /*working on dropdown menu*/
 .drop-menu{
     list-style: none;
@@ -120,7 +121,7 @@ a{
 }
 
 /* Hidden the hamburger button on Desktop mode */
-.image img{
+.image, .image img{
     width: 100px;
     height: 80px;
     display: none;
@@ -178,7 +179,6 @@ main > .first-section{
     grid-column: span 2;
 }
 .first-section .content-2{
-    /* margsin-top: 50px; */
     order: 2;
     grid-column: span 2;
 }
@@ -263,13 +263,18 @@ main > .first-section{
     justify-content: center;
     align-items: center;
 }
-.t-content1 > img{
+.t-content1 > .laptop{
     object-fit: cover;
     height: 100%;
     width: 100%;
     position: absolute;
     right: 29%;
     z-index: 1;
+}
+
+/* Hidden Mobile image */
+.t-content1 .m-mobile{
+    display: none;
 }
 
 .third-section .t-content2{
@@ -389,7 +394,7 @@ footer a:hover, .attribution a:hover{
     .third-section .t-content1{
         height: 500px;
     }
-    .t-content1 > img{
+    .t-content1 > .laptop{
         right: 18%;
     }
     
@@ -415,9 +420,14 @@ footer a:hover, .attribution a:hover{
 }
 
 /* Moving to responsiveness on Mobile, Ignoring Tablet view. Might work on it later */
-@media (max-width: 480px) {
+@media (max-width: 650px) {
     body{
         max-width: 100%;
+    }
+
+    /* Styling the font style for each section */
+    .first-section, .third-section{
+        color: #202131;
     }
 
     /* Styling the header */
@@ -428,15 +438,16 @@ footer a:hover, .attribution a:hover{
     }
     nav{
         padding: 50px 0 10px;
+        height: 100px;
     }
     nav .drop, .button{
         display: none;
     }
 
     /* Displaying the hamburger menu on mobile screens */
-    .image img{
-        width: 70px;
-        height: 60px;
+    .image, .image img{
+        width: 60px;
+        height: 50px;
         display: flex;
     }
 
@@ -444,6 +455,8 @@ footer a:hover, .attribution a:hover{
     main{
         padding: 10px 0;
     }
+
+    /* Styling section 1 including everything in it */
     main > .first-section{
         margin: 25px 30px;
         height: auto;
@@ -467,6 +480,10 @@ footer a:hover, .attribution a:hover{
         top: 0%;
         right: 0%;
     }
+
+    .content-3 .l1-laptop{
+        display: none;
+    }
     .content-3 img{
         display: block;
         object-fit: cover;
@@ -475,103 +492,116 @@ footer a:hover, .attribution a:hover{
         max-width: 90%;
     }
     
+    /* Styling section 2 including everything in it */
+
     .sec-section{
-        margin: 130px 0 50px;
-        height: 330px;
-        background-color: #202131;
-        border: none;
+        margin: 130px 0 10px;
+        height: 650px;
         border-radius: 0 100px 0 100px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 100px 0 0;
-        gap: 40px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20px 0;
+        flex: 1;
     }
     .sec-section .s-item{
-        width: 50%;
+        width: 90%;
     }
+
     .s-content1{
         margin: 0;
         background-image: url(../images/bg-pattern-circles.svg);
-        background-size: 105%;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: center bottom;
+        background-position: center top;
         position: relative;
-        height: 100%;
+        height: 70%;
+        z-index: 0;
     }
+
+    /* Styling the image in first column */
     .s-content1 img{
         height: auto;
         width: 100%;
         position: relative;
-        left: 30px;
-        top: -130px;
+        left: 0;
+        top: -60px;
+    }
+
+    .s-content2{
+        display: block;
+        position: relative;
+        text-align: center;
+        top: -110px;
+
+        z-index: 1;
     }
     .s-content2 *{
         color: rgba(255, 255, 255, 0.918);
     }
+
+    /* Styling section 3 */
     
     .third-section{
-        margin: 150px 80px 50px 0;
+        margin: 30px;
         padding: 0;
         height: auto;
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 2fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
     }
     .third-section .t-content1{
-        order: 1;
-        height: auto;
-        grid-row: span 2;
         position: relative;
-        overflow: hidden;
-        height: 500px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 300px;
+        max-width: 100%;
+        display: block;
     }
-    .t-content1 > img{
+    /* Hidden Laptop image */
+    .t-content1 .laptop{
+        display: none;
+    }
+
+    /* Displaying Mobile image */
+    .t-content1 .m-mobile{
+        display: block;
         object-fit: cover;
         height: 100%;
         width: 100%;
-        position: absolute;
-        right: 29%;
-        z-index: 1;
+        position: relative;
+        right: 0%;
     }
-    
-    .third-section .t-content2{
-        order: 2;
-        grid-column: span 2;
+    /* Styling the contents in secion 3 */
+    .t-content2, .t-content3{
+        text-align: center;
     }
-    
-    .t-content3{
-        order: 2;
-        grid-column: span 2;
-    }
+
     .t-content2 p, .t-content3 p{
         line-height: 2.3ch/* 1.7rem */;
     }
     .t-items{
-        height: 200px;
+        height: auto;
     }
     
-    /* Footer styling starts */
+    /* Footer styling starts for mobile screen */
     footer{
-        margin-top: 30px;
-        padding: 30px 200px 0 100px;
-        background-color: #202131;
+        margin: 0px auto;
         border: none;
-        border-radius: 0 100px 0 0;
-        height: 300px;
-        display: flex;
-        justify-content: space-between;
+        padding: 50px 0 15px;
+        height: auto;
+        display: block;
     }
     footer *{
         color: rgba(255, 255, 255, 0.897);
+        text-align: center;
     }
     footer .logo-foot{
         display: flex;
         align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    footer h4{
+        margin: 17px 0;
     }
     footer a{
         font-size: 17px;
@@ -579,10 +609,11 @@ footer a:hover, .attribution a:hover{
     .product, .company, .connect{
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
     }
     
     .attribution{
+        border: none;
         background-color: #202131;
         color: #e2dfdf;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -591,7 +622,7 @@ footer a:hover, .attribution a:hover{
         text-align: center;
     }
     .attribution a{
-        font-size: 18px;
+        font-size: 16px;
         font-family: cursive;
         color: #b7b9cf;
         text-decoration: overline underline;
