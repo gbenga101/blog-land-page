@@ -103,6 +103,7 @@ a{
 .button{
     display: flex;
 }
+
 .button *, .hero>.btn *{
     padding: 7px 20px;
 }
@@ -116,6 +117,13 @@ a{
     background-color: rgb(241, 126, 91);
     color: white;
     border: none;
+}
+
+/* Hidden the hamburger button on Desktop mode */
+.image img{
+    width: 100px;
+    height: 80px;
+    display: none;
 }
 
 .hero{
@@ -196,13 +204,9 @@ main > .first-section{
     right: 20%;
     z-index: 1;
 }
-/* .content-3 > img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 30%;
-} */
+.content-3 img{
+    display: none;
+}
 
 .sec-section{
     margin: 130px 0 50px;
@@ -407,5 +411,195 @@ footer a:hover, .attribution a:hover{
     }
     .product, .company, .connect{
         gap: 7px;
+    }
+}
+
+/* Moving to responsiveness on Mobile, Ignoring Tablet view. Might work on it later */
+@media (max-width: 480px) {
+    body{
+        max-width: 100%;
+    }
+
+    /* Styling the header */
+    header{
+        height: auto;
+        padding: 0 10px 20px;
+        border-bottom-left-radius: 110px;
+    }
+    nav{
+        padding: 50px 0 10px;
+    }
+    nav .drop, .button{
+        display: none;
+    }
+
+    /* Displaying the hamburger menu on mobile screens */
+    .image img{
+        width: 70px;
+        height: 60px;
+        display: flex;
+    }
+
+    /*Moving to 1st section on main tag*/
+    main{
+        padding: 10px 0;
+    }
+    main > .first-section{
+        margin: 25px 30px;
+        height: auto;
+        display: block;
+        position: relative;
+        order: 0;
+    }
+    .first-section *{
+        text-align: center;
+    }
+    
+    .first-section .content-2{
+        order: 0;
+    }
+    .first-section .content-3{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-image: none;
+        left: 0%;
+        top: 0%;
+        right: 0%;
+    }
+    .content-3 img{
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        max-height: 90%;
+        max-width: 90%;
+    }
+    
+    .sec-section{
+        margin: 130px 0 50px;
+        height: 330px;
+        background-color: #202131;
+        border: none;
+        border-radius: 0 100px 0 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 100px 0 0;
+        gap: 40px;
+    }
+    .sec-section .s-item{
+        width: 50%;
+    }
+    .s-content1{
+        margin: 0;
+        background-image: url(../images/bg-pattern-circles.svg);
+        background-size: 105%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        position: relative;
+        height: 100%;
+    }
+    .s-content1 img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        left: 30px;
+        top: -130px;
+    }
+    .s-content2 *{
+        color: rgba(255, 255, 255, 0.918);
+    }
+    
+    .third-section{
+        margin: 150px 80px 50px 0;
+        padding: 0;
+        height: auto;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .third-section .t-content1{
+        order: 1;
+        height: auto;
+        grid-row: span 2;
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .t-content1 > img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: 29%;
+        z-index: 1;
+    }
+    
+    .third-section .t-content2{
+        order: 2;
+        grid-column: span 2;
+    }
+    
+    .t-content3{
+        order: 2;
+        grid-column: span 2;
+    }
+    .t-content2 p, .t-content3 p{
+        line-height: 2.3ch/* 1.7rem */;
+    }
+    .t-items{
+        height: 200px;
+    }
+    
+    /* Footer styling starts */
+    footer{
+        margin-top: 30px;
+        padding: 30px 200px 0 100px;
+        background-color: #202131;
+        border: none;
+        border-radius: 0 100px 0 0;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+    footer *{
+        color: rgba(255, 255, 255, 0.897);
+    }
+    footer .logo-foot{
+        display: flex;
+        align-items: center;
+    }
+    footer a{
+        font-size: 17px;
+    }
+    .product, .company, .connect{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .attribution{
+        background-color: #202131;
+        color: #e2dfdf;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 15px;
+        height: auto;
+        text-align: center;
+    }
+    .attribution a{
+        font-size: 18px;
+        font-family: cursive;
+        color: #b7b9cf;
+        text-decoration: overline underline;
+    }
+    footer a:hover, .attribution a:hover{
+        font-variant: small-caps;
+        font-weight: bold;
+        letter-spacing: 1mm;
+        transition: ease-in-out 0.3s, 0.2s linear;
     }
 }
